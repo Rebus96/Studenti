@@ -10,8 +10,12 @@ import java.util.List;
 
 @RestController
 public class StudenteController {
-    @Autowired
-    private StudenteRepository studenteRepository;
+
+    private final StudenteRepository studenteRepository;
+
+    public StudenteController(StudenteRepository studenteRepository) {
+        this.studenteRepository = studenteRepository;
+    }
 
     @GetMapping("/voti")
     public List<Studente> getAllStudenti() {
